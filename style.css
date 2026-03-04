@@ -1,0 +1,120 @@
+/* Prevent zoom + overflow */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    touch-action: manipulation;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: pink;
+    font-family: Arial, sans-serif;
+}
+
+/* Card container */
+.card-container {
+    perspective: 1000px;
+}
+
+/* Card */
+.card {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 6s;
+    cursor: pointer;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Card faces */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Front */
+.card-front {
+    background: white;
+    color: #333;
+}
+
+/* Back */
+.card-back {
+    background: #fff;
+    transform: rotateY(180deg);
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/* Word animation */
+.word {
+    margin: 10px 0;
+    animation: pop 6s ease forwards;
+    transform-origin: center;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Image slider */
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.image-slider img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex: 0 0 100%;
+    border-radius: 10px;
+    scroll-snap-align: center;
+}
+
+/* Confetti */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    top: -10px;
+    animation: fall 1.2s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(450px) rotate(720deg);
+        opacity: 0;
+    }
+} }
+}(720deg);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flip Card Surprise</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card-container">
+    <div class="card" id="card">
+
+        <!-- Front -->
+        <div class="card-face card-front">
+            <h2>Click to Flip 🎁</h2>
+        </div>
+
+        <!-- Back -->
+        <div class="card-face card-back">
+            
+            <h2 class="word">😝 Best Frined 😝</h2>
+
+            <div class="image-slider">
+                <img src="image1.jpeg">
+                <img src="image2.jpeg">
+                <img src="image3.jpeg">
+            </div>
+
+            <p>Swipe mo Tanga</p>
+
+            <div class="confetti-container" id="confetti"></div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+const card = document.getElementById("card");
+const confettiContainer = document.getElementById("confetti");
+
+card.addEventListener("click", () => {
+    card.classList.toggle("flipped");
+
+    if (card.classList.contains("flipped")) {
+        launchConfetti();
+    }
+});
+
+function launchConfetti() {
+    confettiContainer.innerHTML = "";
+    for (let i = 0; i < 25; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = Math.random() * 100 + "%";
+        confetti.style.backgroundColor =
+            `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.animationDelay = Math.random() * 0.5 + "s";
+        confettiContainer.appendChild(confetti);
+    }
+}
+</script>
+
+</body>
+</html>pt>
+
+</body>
+</html>pt>
+
+</body>
+</html>>
+
+</body>
+</html>
